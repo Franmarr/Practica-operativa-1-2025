@@ -33,27 +33,24 @@ class GestorGastos():
         for unGasto in self.__listaGastos:
             if unGasto.getPatente()==xpatMovi.getPatente() and unGasto.getFecha().month==4:
                 print(f"Fecha: {unGasto.getFecha()}, Importe: {unGasto.getImporte()}, Descripcion: {unGasto.getDescripcion()}")
+                
                 acu+=float(unGasto.getImporte())
+                print(acu)
         
         print(f"Total de gastos: {acu+xpatMovi.getImpMensual()}")
 
         return
     
 
-    def indicarGastoPorFecha(self, xfecha):
-        i:int=0
-        aux=-1
-        fechaEncontrada=False
-        fechaConvertida=datetime.strptime(xfecha, "%Y-%m-%d").date()
-        while i<len(self.__listaGastos) and fechaEncontrada is not True:
-            #print(self.__listaGastos[i])
-            if self.__listaGastos[i].getFecha().date()==fechaConvertida:
-                aux=self.__listaGastos[i]
-                fechaEncontrada=True
-            else:
-                i+=1
+    def obtenerGastoPorFecha(self, xfecha):
+        acu=0
+        xfechaConvertida= datetime.strptime(xfecha, "%Y-%m-%d").date()
+        for unGasto in self.__listaGastos:
+            if unGasto.getFecha().date() == xfechaConvertida:
+                print(f"Gasto: {unGasto.getImporte()}")
+                acu+=float(unGasto.getImporte())
 
-        return aux
+        return acu
 
 
     def obtenerGastosOrdenados(self):
@@ -61,6 +58,19 @@ class GestorGastos():
         print("ordenado de menor a mayor con sobrecarga")
         for elem in self.__listaGastos:
             print(elem)
+
+
+    def mostrarIncisoC(self, xfecha, xGM):
+        fechaConvertida=datetime.strptime(xfecha, "%Y-%m-%d").date()
+        for unGasto in self.__listaGastos:
+            print("Bucle FOR")
+            print(unGasto.getFecha().date())
+            if unGasto.getFecha().date() == fechaConvertida:
+                xGM.mostrarPatenteMovi(unGasto)
+
+        return
+
+
 
 
         # fechaConvertida=datetime.strptime(xfecha, "%Y-%m-%d")

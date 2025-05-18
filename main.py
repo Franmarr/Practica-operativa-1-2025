@@ -36,15 +36,19 @@ if __name__ == "__main__":
         
         elif opcion==2:
             fecha=input("Ingrese una fecha en formato Y-M-D: ") #aqui tiene que escribir por teclado una fecha como: 2025-03-21
-            aux=GG.indicarGastoPorFecha(fecha)
-            if aux != -1:
-                print(f"Gasto total a pagar en fecha indicada: {aux.getImporte()}")
+            aux=GG.obtenerGastoPorFecha(fecha)
+
+            if aux != 0:
+                print(f"Gasto total para la fecha: {aux}")
             else:
-                print("No se encontro fecha")
+                print("No hubo gastos para la fecha indicada")
 
         elif opcion == 3:
             GG.obtenerGastosOrdenados()
-            
-            # fecha=input("Ingrese una fecha en formato Y-M-D: ")
+            fecha1=input("Ingrese una fecha en formato Y-M-D: ")
+            #GG.obtenerGastoPorFecha(fecha1)
+
+            GG.mostrarIncisoC(fecha1, GM)
+
             
         opcion=int(input("Ingrese otra opcion: "))
