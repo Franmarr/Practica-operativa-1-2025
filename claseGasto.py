@@ -33,6 +33,9 @@ class Gasto():
     #     return (self.__fecha, self.__patente) < (otro.__fecha, otro.__patente)
 
     def __lt__(self, otro):
+        resultado= None
         if self.__fecha == otro.getFecha():
-            return self.__patente < otro.getPatente()
-        return self.__fecha < otro.getFecha()
+            resultado= self.__patente < otro.getPatente()
+        else:
+            resultado= self.__fecha < otro.getFecha()
+        return resultado
