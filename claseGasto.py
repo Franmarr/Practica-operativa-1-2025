@@ -34,7 +34,7 @@ class Gasto():
 
     def __lt__(self, otro):
         resultado= None
-        if self.__fecha == otro.getFecha():
+        if self.__fecha == otro.getFecha(): # si la fecha es igual compara por patente, si no, compara por fecha
             resultado= self.__patente < otro.getPatente()
         else:
             resultado= self.__fecha < otro.getFecha()

@@ -55,33 +55,21 @@ class GestorGastos():
 
     def obtenerGastosOrdenados(self):
         self.__listaGastos.sort()
-        print("ordenado de menor a mayor con sobrecarga")
-        for elem in self.__listaGastos:
-            print(elem)
+        # print("ordenado de menor a mayor con sobrecarga")
+        # for elem in self.__listaGastos:
+        #     print(elem)
 
 
-    def mostrarIncisoC(self, xfecha, xGM):
+    def incisoC(self, xfecha, GM):
+        i:int = 0
         fechaConvertida=datetime.strptime(xfecha, "%Y-%m-%d").date()
+
         for unGasto in self.__listaGastos:
-            print("Bucle FOR")
-            print(unGasto.getFecha().date())
+            # print(unGasto)
             if unGasto.getFecha().date() == fechaConvertida:
-                xGM.mostrarPatenteMovi(unGasto)
+                GM.mostrarIncisoC(unGasto.getPatente())
+                i+=1
 
-        return
-
-
-
-
-        # fechaConvertida=datetime.strptime(xfecha, "%Y-%m-%d")
-        # acu=0
-        # for unGasto in self.__listaGastos:
-        #     if unGasto.getFecha()==fechaConvertida:
-        #         print(f"Gasto de la fecha indicada: {unGasto.getImporte()}")
-        #         acu+=float(unGasto.getImporte())
-
-        # print(f"Total general a pagar: {acu}")
-
-        # return
+        return i
 
 
