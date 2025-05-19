@@ -56,3 +56,17 @@ class GestorMovilidades():
     def mostrarPatenteMovi(self, patente):
         print(f"Patente: {patente.getPatente()}, Tipo: {patente.getTipo()}, Capacidad Carga: {patente.getCapacidadCarga()}, Imp mensual de patente: {patente.getImpMensual()}, Marca: {patente.getMarca()}, Modelo: {patente.getModelo()}")
         return
+    
+
+    def mostrarIncisoC(self, xpat):
+        i:int=0
+        patEncontrada=False
+
+        while i<self.__cantidad and patEncontrada is not True:
+            if xpat == self.__arreMovi[i].getPatente():
+                print(f"Patente: {self.__arreMovi[i].getPatente()}, Marca: {self.__arreMovi[i].getMarca()}, Modelo: {self.__arreMovi[i].getModelo()}, Total a pagar: {self.__arreMovi[i].getImpMensual()}")
+                patEncontrada=True
+            else:
+                i+=1
+
+        return patEncontrada

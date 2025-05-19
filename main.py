@@ -46,9 +46,11 @@ if __name__ == "__main__":
         elif opcion == 3:
             GG.obtenerGastosOrdenados()
             fecha1=input("Ingrese una fecha en formato Y-M-D: ")
-            #GG.obtenerGastoPorFecha(fecha1)
+            auxi=GG.incisoC(fecha1, GM)
 
-            GG.mostrarIncisoC(fecha1, GM)
+            if auxi ==0: #PREGUNTAR ESTA SOLUCION, CON UN CONTADOR. TENDRIA QUE USAR WHILE TAMBIEN EN LA FUNCION DE INCISO C?
+                print("No se encontraron datos para la fecha indicada")
 
-            
+            #GG.mostrarIncisoC(fecha1, GM)
+
         opcion=int(input("Ingrese otra opcion: "))
