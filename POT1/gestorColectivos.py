@@ -50,3 +50,13 @@ class GestorColectivos():
                 i+=1
 
         return aux
+    
+
+    def listarGastosColectivos(self, GT):
+        for i in range(self.__cantidad):
+            GT.mostrarDatos(self.__arreColectivos[i].getPatente(), Colectivo.getConsumo())
+
+        return
+
+    #Mostrar por cada colecƟvo la canƟdad total de km recorridos y el gasto esƟmado 
+#   en combusƟble para la canƟdad total de km recorridos. 

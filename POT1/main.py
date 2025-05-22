@@ -38,6 +38,8 @@ if __name__ == "__main__":
                 GT.listarTramosChofer(patente)
             else:
                 print("No se encontro el DNI ingresado.")
+        elif op==2:
+            GC.listarGastosColectivos(GT)
 
 
         op=int(input("Ingrese otra opcion o 0 para terminar: "))

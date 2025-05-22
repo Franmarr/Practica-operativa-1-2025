@@ -33,3 +33,15 @@ class GestorTramos():
                 print(f"Ciudad Origen: {unTramo.getCiudadOrigen()}, Ciudad Destino: {unTramo.getCiudadDestino()}, KM recorridos: {unTramo.getDistancia()}")
 
         return
+    
+
+    def mostrarDatos(self, xpat, xconsumo):
+        acuDistancia=0
+
+        for unTramo in self.__listaTramos:
+            if unTramo.getPatente() == xpat:
+                acuDistancia+=unTramo.getDistancia()
+
+        gastoCombustible= (acuDistancia * xconsumo)/100
+
+        print(f"Para patente {xpat}, se recorrio {acuDistancia} km de distancia y tiene un gasto promedio de: {gastoCombustible}")
