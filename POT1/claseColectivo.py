@@ -4,6 +4,7 @@ class Colectivo():
     __modelo: str
     __capacidad: int
     __dni: str
+    __consumoCombustible= 35
 
     def __init__(self, patente, marca, modelo, capacidad, dni):
         self.__patente=patente
@@ -24,8 +25,12 @@ class Colectivo():
     def getCapacidad(self):
         return self.__capacidad
     
-    def getDni(self):
+    def getDNI(self):
         return self.__dni
+    
+    @classmethod
+    def getConsumo(cls):
+        return cls.__consumoCombustible
     
     def __str__(self):
         return f"Patente: {self.__patente}, Marca: {self.__marca}, Modelo: {self.__modelo}, Capacidad: {self.__capacidad}, DNI: {self.__dni}"
